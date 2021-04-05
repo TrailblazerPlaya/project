@@ -1,61 +1,26 @@
 "use strickt";
-//_______________________________
-//Function declaration
-function showFirstMassage(text) {
-    console.log(text);
+//Callback
+function first () {
+    //Do something
+    setTimeout(function() {
+        console.log(1);
+    }, 500);
 }
-showFirstMassage("hello sooqa");
+first();
 
-
-// function calc(a, b) {
-//     return (a + b);
-// }
-// console.log(calc(4, 10));
-// console.log(calc(33, 20));
-// console.log(calc(55, 12));
-
-function ret() {
-    let num = 50;
-
-
-    return num;
+function second () {
+    console.log(2);
 }
-const anotherNum = ret();
-console.log(anotherNum);
+second();
+/////////////
 
-//Function expression
-const logger = function() {
-    console.log("hello");
-};
-logger();
+function learnJS(lang, callback) {
+    console.log(`Я учу: ${lang}`);
+    callback();
+}
 
-//Стрелочная функция
-const calc = (a, b) => a + b;
-console.log(calc(10, 5));
+function done() {
+    console.log("Я прошел этот урок");
+}
 
-
-//Методы и свойства строк и чисел________
-const arr = [1, 2, 3, 5];
-console.log(arr.length);
-
-
-const str = "teSt";
-console.log(str.toLowerCase());
-
-const fruit = "Some fruit";
-console.log(fruit.indexOf("fruit"));//с какого индекса начинается
-
-
-
-const logg = "Hello anime boy";
-// console.log(logg.slice(6, 11));
-// console.log(logg.slice(12, 15));
-console.log(logg.substr(5, 6));//вырезает из переменной
-
-const num = 12.6;
-console.log(Math.round(num));//округление до целого
-
-const lel = "12.2px";
-console.log(parseInt(lel));//из строки в число(не прямое назначение)
-console.log(parseFloat(lel));//из строки в число с дробными значениями
-
+learnJS("JavaScript", done);
