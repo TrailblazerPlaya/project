@@ -1,32 +1,56 @@
 "use strickt";
-//Massive
- let arr = [1, 2, 73, 51, 8];
- arr.sort();//сортирует по первому символу от 1 до 9
+//Передача по ссылке или значению
+let a = 5,
+    b = a;
+b = b + 5;    
+console.log(b);
+console.log(a); 
 
- console.log(arr);
- 
- function compareNum(a, b) {
-     return a - b;
- }
+const obj = {
+    a: 5,
+    b: 1
+};
+// const copy = obj;
+// /*тут передается уже ссылка на объект
+// то есть мы уже меняем сам obj*/
+// copy.a = 10;
 
-//  arr.pop();
-//  arr.push(10);
-//  console.log(arr);
+// console.log(copy);
+// console.log(obj);
 
-arr.forEach(function(item, i, arr) {
-    console.log(`${i}: ${item} внутри массива ${arr}`);
-});
+///////////////////////////Работа с поверхностными копиями
+function copy(mainObj) {
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
+    }
 
-
-// for (let i = 0; i < arr.length; i++) {
-//     console.log(arr[i]);
-// }
-
-for (let value of arr) {
-    console.log(value);
+    return objCopy;
 }
 
-const str = prompt("", "");
-const products = str.split(", ");
-products.sort();
-console.log(products.join('; '));
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+newNumbers.c.x = 10;
+
+console.log(newNumbers); 
+console.log(numbers);//тут сохранилась ссылка, так что значение меняется 
+
+const add = {
+    d: 12,
+    e: 45
+}
+
+/*Помещаем один объект в другой (target, assign)*/
+console.log(Object.assign(numbers, add));

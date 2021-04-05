@@ -9,3 +9,8 @@ html {
 body {
     font-size: 1.4rem;
 }
+
+h1 {
+    background-color: yellow;
+    color: while;
+}
