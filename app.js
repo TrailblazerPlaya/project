@@ -1,45 +1,32 @@
 "use strickt";
-//Object
+//Massive
+ let arr = [1, 2, 73, 51, 8];
+ arr.sort();//сортирует по первому символу от 1 до 9
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    color: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() { //Это метод объекта, который я создал
-        console.log("Test");
-    }
-};
+ console.log(arr);
+ 
+ function compareNum(a, b) {
+     return a - b;
+ }
 
-options.makeTest();
+//  arr.pop();
+//  arr.push(10);
+//  console.log(arr);
 
-
-const {border, bg} = options.color;//Деструктуризация объекта(вытащил)
-console.log(border);
+arr.forEach(function(item, i, arr) {
+    console.log(`${i}: ${item} внутри массива ${arr}`);
+});
 
 
-// console.log(Object.keys(options).length);
-
-
-// console.log(options.name);
-
-// delete options.name;
-
-// console.log(options);
-
-// let counter = 0;
-// for (let key in options) {
-//     if (typeof(options[key]) === 'object') {
-//         for (let i in options[key]) {
-//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-//             counter++;
-//         }
-//     }else {
-//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
-//         counter++;
-//     }
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
 // }
-// console.log(counter);
+
+for (let value of arr) {
+    console.log(value);
+}
+
+const str = prompt("", "");
+const products = str.split(", ");
+products.sort();
+console.log(products.join('; '));
