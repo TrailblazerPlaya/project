@@ -1,44 +1,43 @@
 "use strickt";
-/*Динамическая типизация*/
-//To string
-//1 старый
-console.log(typeof(String(null)));
+//Task
+// let x = 5; alert( x++ ); //выведет числа от 5, если префиксная функция, то с 6. 
 
-//2 конкатинация (способ офк говно)
-console.log(typeof(5 + ''));
+// [ ] + false - null + true // NaN, потому что мы отнимаем null(не мат значение)
 
-const num = 5;
-console.log("https://vk.com/catalog/" + num);
+// let y = 1; 
+// let x = y = 2; 
+// alert(x); 
 
-const fontSize = 25 + 'px';
+// console.log([] + 1 + 2);//пустые ковычки превращаются в строку, дальше идет конкатинация строк и чисел = строка(12)
 
+// alert( "1"[0] );//тут мы обращаемся к нулевому индексу, то есть строке 1 (1)
 
-//To number
-//1
-console.log(typeof(Number('4')));
+// console.log(2 && 1 && null && 0 && undefined); //Оператор &&(и) всегда запинается на лжи, то есть на null. Это следует помнить
 
-//2 Унарный плюс
-console.log(typeof((+'4')));
-
-//3
-console.log(typeof(parseInt("15px", 10)));
+// const a = 10;
+// const b = 15;
+// console.log(!!( a && b ));//(!!) превращает следующее выражение в boolean;
+// console.log((a && b));
 
 
-//To boolean
+//Нужно смотреть приоритет операторов!
 
-/*0, '', null, undefined, NaN; - это все FALSE*/
+        // 3      3     3
+// alert( null || 2 && 3 || 4 ); //Сначала &&, потом ||. Оператор || запинается на правде!!!!!!!
 
-//1
-let switcher = null;
+//Это два разных массива с одинаковыми значениями, так что нет, не равны.
+// let a = [1, 2, 3]; 
+// let b = [1, 2, 3];
+// console.log(a == b);
 
-if (switcher) {
-    console.log('Working...');
-}
+// alert( +"Infinity" );//тут все просто, преобразуем зарезервированное слово в число, получаем бесконечность(Infinity)
 
-switcher = 1;
-if (switcher) {
-    console.log('Working...');
-}
 
-//2
-console.log(typeof(Boolean('4')));
+// console.log("Ёжик" > "яблоко");
+
+// console.log(0 || "" || 2 || undefined || true || false);//опять же запинается на первом правдивом значении, то есть 2.
+// console.log(0 && "" && 2 && undefined && true && false);//опять же запинается на первом лживом значении, то есть 0.
+// console.log(0 || "" && 2 || undefined && true && false);//undefined
+
+
+
